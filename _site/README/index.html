@@ -1,0 +1,44 @@
+<h1>11ty Blog Posts</h1>
+<h2>Front End Javascript- Working with APIs and IP Addresses</h2>
+<h3>GeoIP API</h3>
+<p>To start, I wanted to briefly introduce the <a href="https://freegeoip.app/json/">API</a> we will be working with to determine the latitude and longitude in the IP Address. Feel free to click on the link to explore what the else API can be used for.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4yrdfinc56ocmtz09nga.png" alt="Image description"></p>
+<p>As you can see, we set the URL of the API as our location endpoint in our constructor of our LocationFromIP.js class, then:</p>
+<h3>IPFast API</h3>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n50chbhwg52rdjlf2mxu.png" alt="Image description"></p>
+<p>Note, in the UpdateUserIP method of the UserIP.js class, the functionality of fetch; it grabs (or, fetches) the other <a href="https://ip-fast.com/api/ip/?format=json&amp;location=True">API</a> we are using to lookup the IP (<code>this.ipLookUp</code>) and returns the information (the IP address) if it can.</p>
+<h3>Working with both APIs</h3>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sc5z6xoosopqsf7ab1u1.png" alt="Image description"></p>
+<p>We work inside of the getGEOIPData method to fetch which data points we want to retrieve from the GeoIP API, such as long (longitude), lat (latitude), city, and region. To make it easier later, I also declared them as variables. Note the usage of the IPFast API here as well, as seen in the lines:
+<code>const IPClass = new UserIP();  const userIPData = await IPClass.updateUserIP();</code>.</p>
+<p>Ideally, after the location is pulled from the GeoIP API, and the IP is pulled from the IPFast API, it should be able to be output later in the <code>render()</code> method when you want to show a map.</p>
+<h3>...Did it work?</h3>
+<p>If you're lucky, yes! But did mine? Not quite.
+I will admit, I found this exercise to be very tricky and am not entirely sure I understand everything completely. If you want to try to check it out for yourself, feel free to check out this project on my <a href="https://github.com/hek5118/ip-project">GitHub</a>!</p>
+<h2>Beginning to work with web components</h2>
+<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+<h3>Web Components for Beginners</h3>
+<p>If you're a beginner in web development and web components, you've come to the right place. As of a few days ago, I had never worked with web components and had worked very little with JavaScript as a whole. In this post, I will give some pointers on how to start out on your web components journey.</p>
+<h3>What are web components?</h3>
+<p>When beginning to learn about a new tool, it helps to have a basic understanding of what it is. Web components are a set of API platforms that allow the creation and sharing of HTML tags when developing new sites and apps. The primary four specifications they are based on include custom elements, shadow DOM, ES modules, and an HTML template. <a href="https://www.webcomponents.org/introduction">Learn more.</a></p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6uhawiyzi7ng7b8jmnuc.png" alt="Image description"></p>
+<h3>JavaScript Basics</h3>
+<p>Another important thing to note when learning about web components is their relationship with the coding language JavaScript. If you are new to JavaScript, I recommend <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">this article</a> to help give you a basic understanding of its uses.</p>
+<p>I myself found this to be very helpful when I first began coding in JavaScript, as most of my background up to that point had been in Java; while there are some similarities between the two, it can certainly help to brush up on some of the key differences between a new language and your comfort language when programming.</p>
+<h3>Downloading your IDE</h3>
+<p>The next step after brushing up on JavaScript would be to download an IDE to begin coding with it. Personally, I recommend VSCode; I found it to be very intuitive and beginner-friendly. I used <a href="https://code.visualstudio.com/">this site</a> to download it onto my computer.</p>
+<h3>Downloading Node.js</h3>
+<p>After downloading VSCode, the next thing to do would be to head to https://nodejs.org/en/ to download Node.js. Be sure to download the LTS version to ensure that you are getting the most stable downloaded version. Node.js is a runtime for JavaScript that allows you to run server-side operations and programming.</p>
+<p>When you think you have it downloaded, an easy way to double check is to simply run <code>node -v</code> in your terminal like so:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lfr3m3w1ffrhcrn3bksi.png" alt="Image description"></p>
+<h3>Downloading npm</h3>
+<p>Good news- if you successfully downloaded Node, you should already have npm as well. Npm is the default package manager for Node.js. You can double check this the same way you did for Node; type <code>npm -v</code> into your terminal:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rnd9lrlbfeq8aejv9i4d.png" alt="Image description"></p>
+<p>##Downloading git
+Using <a href="https://github.com/git-guides/install-git">this link</a>, you should be able to download git onto your computer. Git allows you to track all of the changes you make for any files and is highly recommended for use by programmers. Although this step isn't 100% necessary for this project, it is good to have.</p>
+<h3>Initializing your open-wc project</h3>
+<p>Once you have VSCode, Node.js, and npm all installed correctly, we can move onto web components. If you are using git, first create a pathway of folders that you want this project to be in, and clone a repository from your GitHub into one of the files. After that, you can enter <code>npm init @open-wc</code>.  If this runs, you have correctly installed all of the necessary components thus far and are ready to begin working on web components!</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/96aor7e4dgsl4b7uj294.png" alt="Image description"></p>
+<p>You should be prompted with some questions following the command to launch web components. I chose the following: Scaffold a new project, Web component, Linting, Testing, Demoing, and I chose no for using typescript. You will be prompted to enter a tag name for the web component, perhaps &quot;hello-world&quot;, and then I chose yes, and yes with npm. If this was done correctly, you should get a message instructing you to simply change directories and run the web component, which should take you to a screen such as this one:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ivkqoxths0v5r4zsb3dc.png" alt="Image description"></p>
+<p>Congratulations! You have completed the first steps of beginning to work with web components. If you are interested, I would recommend following this up with going through the /src file and ensuring you understand where most lines of code are coming from and contributing. Happy programming!</p>
